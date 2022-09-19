@@ -1,0 +1,129 @@
+
+                   J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2        
+
+ 
+22.57.52 JOB01347 ---- FRIDAY,    01 JUL 2022 ----
+22.57.52 JOB01347  IRR010I  USERID KC03C54  IS ASSIGNED TO THIS JOB.
+22.57.52 JOB01347  ICH70001I KC03C54  LAST ACCESS AT 22:53:05 ON FRIDAY, JULY 1, 2022
+22.57.52 JOB01347  $HASP373 KC03C54A STARTED - INIT 1    - CLASS A        - SYS 2964
+22.57.52 JOB01347  -                                      -----TIMINGS (MINS.)------                          -----PAGING COUNTS----
+22.57.52 JOB01347  -STEPNAME PROCSTEP    RC   EXCP   CONN       TCB       SRB  CLOCK          SERV  WORKLOAD  PAGE  SWAP   VIO SWAPS
+22.57.52 JOB01347  -JSTEP01              00     23      2       .00       .00     .0             4  BATCH        0     0     0     0
+22.57.52 JOB01347  -KC03C54A ENDED.  NAME-R. Park              TOTAL TCB CPU TIME=      .00 TOTAL ELAPSED TIME=    .0
+22.57.52 JOB01347  $HASP395 KC03C54A ENDED - RC=0000
+
+------ JES2 JOB STATISTICS ------
+
+
+  01 JUL 2022 JOB EXECUTION DATE
+
+
+           44 CARDS READ
+
+
+          100 SYSOUT PRINT RECORDS
+
+
+            0 SYSOUT PUNCH RECORDS
+
+
+           11 SYSOUT SPOOL KBYTES
+
+
+         0.00 MINUTES EXECUTION TIME
+!! END OF JES SPOOL FILE !!
+       1 //KC03C54A JOB ,'R. Park',MSGCLASS=H                                    JOB01347
+       2 //JSTEP01  EXEC PGM=ASSIST                                                      
+       3 //CEEOPTS DD *                                                                  
+       4 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                               
+       5 //SYSPRINT DD SYSOUT=*                                                          
+       6 //SYSIN    DD *                                                                 
+       7 //                                                                              
+!! END OF JES SPOOL FILE !!
+ICH70001I KC03C54  LAST ACCESS AT 22:53:05 ON FRIDAY, JULY 1, 2022
+IEFA111I KC03C54A IS USING THE FOLLOWING JOB RELATED SETTINGS:
+         SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+IEF236I ALLOC. FOR KC03C54A JSTEP01
+IEF237I JES2 ALLOCATED TO CEEOPTS
+IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF237I JES2 ALLOCATED TO SYSIN
+IEF142I KC03C54A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+IEF285I   KC03C54.KC03C54A.JOB01347.D0000101.?         SYSIN         
+IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+IEF285I   KC03C54.KC03C54A.JOB01347.D0000103.?         SYSOUT        
+IEF285I   KC03C54.KC03C54A.JOB01347.D0000102.?         SYSIN         
+IEF373I STEP/JSTEP01 /START 2022182.2257
+IEF032I STEP/JSTEP01 /STOP  2022182.2257 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+        VIRT:   584K  SYS:   248K  EXT:        0K  SYS:    11264K
+        ATB- REAL:                  1056K  SLOTS:                     0K
+             VIRT- ALLOC:      13M SHRD:       0M
+IEF375I  JOB/KC03C54A/START 2022182.2257
+IEF033I  JOB/KC03C54A/STOP  2022182.2257 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+!! END OF JES SPOOL FILE !!
+
+*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                    
+
+                                                                                                               PAGE    1            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                      1 *****************************************************************                           
+                                      2 *                                                               *                           
+                                      3 *  CSCI 360-1              ASSIGNMENT 3       Summer 2022       *                           
+                                      4 *                                                               *                           
+                                      5 *  PROGRAMMER NAME: Ryan Park                                   *                           
+                                      6 *             DATE: 07/01/22                                    *                           
+                                      7 *     PROGRAM NAME: ASSIGN3C                                    *                           
+                                      8 *         FUNCTION:                                             *                           
+                                      9 *                   MAKE NUM1 FULLWORD 15                       *                           
+                                     10 *                   MAKE NUM2 FULLWWORD 7                       *                           
+                                     11 *                   LOAD NUM1(EXPLICIT) INTO REGISTER 2         *                           
+                                     12 *                   LOAD NUM2(EXPLICIT) INTO REGISTER 3         *                           
+                                     13 *                   SUBTRACT REG 3 REG FROM 2                   *                           
+                                     14 *                   STORE CONTENTS(EXPLICIT)                    *                           
+                                     15 *                          FROM REG 2 IN ANSWER                 *                           
+                                     16 *                   DUMP STARTING FROM ANSWER                   *                           
+                                     17 *                         THEN  8 BYTES AFTER                   *                           
+                                     18 *                                                               *                           
+                                     19 *****************************************************************                           
+000000                               20 MAIN     CSECT                                                                              
+000000                               21          USING MAIN,15     ESTABLISH ADDRESSABILITY ON REG 15                               
+000000 5820 F018            00018    22          L     2,24(,15)   LOAD NUM1(15) INTO REGISTER 2                                    
+000004 5830 F01C            0001C    23          L     3,28(,15)   LOAD NUM2(7) INTO REGISTER 3                                     
+000008 1B23                          24          SR    2,3         SUBTRACT 7 FROM 15                                               
+00000A 5020 F020            00020    25          ST    2,32(,15)   STORE (15-7) AS ANSWER                                           
+00000E E060 F020 0008 00020          26          XDUMP ANSWER,8    DUMP CONTENTS ANSWER TO 8 BYTES AFTER                            
+000014 07FE                          27          BR    14          RETURN TO CALLER                                                 
+                                     28 *                                                                                           
+                                     29          LTORG             LITERAL ORGANIZATION                                             
+                                     30 *                                                                                           
+000018 0000000F                      31 NUM1     DC    F'15'       DEFINE CONSTANT NUM1 AS FULLWORD 15                              
+00001C 00000007                      32 NUM2     DC    F'7'        DEFINE CONSTANT NUM2 AS FULLWORD 7                               
+000020                               33 ANSWER   DS    F           DEFINE STORAGE ANSWER FULLWORD                                   
+                                     34          END   MAIN                                                                         
+
+***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+*** DYNAMIC CORE AREA USED:  LOW:     892 HIGH:     396 LEAVING:  492280 FREE BYTES. AVERAGE:       36 BYTES/STMT ***               
+
+*** ASSEMBLY TIME =    0.000 SECS,    35000 STATEMENTS/SEC ***                                                                      
+
+*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+
+BEGIN XSNAP - CALL     1 AT E0000014 USER STORAGE                                                                                   
+
+                             CORE ADDRESSES SPECIFIED-     000020 TO 000028                                                         
+000020   00000008 F5F5F5F5 F5F5F5F5 00000000    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *....55555555....5555555555555555*            
+
+                                                                                                                                    
+
+*** EXECUTION TIME =    0.000 SECS.         6 INSTRUCTIONS EXECUTED -     6000 INSTRUCTIONS/SEC ***                                 
+
+*** FIRST CARD NOT READ: NO CARDS READ:FILE UNOPENED                                                                                
+
+*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+!! END OF JES SPOOL FILE !!

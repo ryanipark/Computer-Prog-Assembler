@@ -1,0 +1,479 @@
+
+                   J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2        
+
+ 
+20.20.28 JOB05563 ---- FRIDAY,    22 JUL 2022 ----
+20.20.28 JOB05563  IRR010I  USERID KC03C54  IS ASSIGNED TO THIS JOB.
+20.20.28 JOB05563  ICH70001I KC03C54  LAST ACCESS AT 20:20:26 ON FRIDAY, JULY 22, 2022
+20.20.28 JOB05563  $HASP373 KC03C54A STARTED - INIT 2    - CLASS A        - SYS 2964
+20.20.29 JOB05563  -                                      -----TIMINGS (MINS.)------                          -----PAGING COUNTS----
+20.20.29 JOB05563  -STEPNAME PROCSTEP    RC   EXCP   CONN       TCB       SRB  CLOCK          SERV  WORKLOAD  PAGE  SWAP   VIO SWAPS
+20.20.29 JOB05563  -JSTEP01              00     47      4       .00       .00     .0             9  BATCH        0     0     0     0
+20.20.29 JOB05563  -KC03C54A ENDED.  NAME-R. Park              TOTAL TCB CPU TIME=      .00 TOTAL ELAPSED TIME=    .0
+20.20.29 JOB05563  $HASP395 KC03C54A ENDED - RC=0000
+
+------ JES2 JOB STATISTICS ------
+
+
+  22 JUL 2022 JOB EXECUTION DATE
+
+
+          317 CARDS READ
+
+
+          418 SYSOUT PRINT RECORDS
+
+
+            0 SYSOUT PUNCH RECORDS
+
+
+           37 SYSOUT SPOOL KBYTES
+
+
+         0.00 MINUTES EXECUTION TIME
+!! END OF JES SPOOL FILE !!
+       1 //KC03C54A JOB ,'R. Park',MSGCLASS=H                                    JOB05563
+       2 //JSTEP01  EXEC PGM=ASSIST                                                      
+       3 //CEEOPTS DD *                                                                  
+       4 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                               
+       5 //SYSPRINT DD SYSOUT=*                                                          
+       6 //SYSIN    DD *                                                                 
+         //*88                                                                           
+         //* THE FOLLOWING IS THE INPUT DATA SET                                         
+         //*                                                                             
+       7 //FT05F001 DD DSN=KC02322.CSCI360.DATASU22(DATA6),DISP=SHR                      
+         //*                                                                             
+         //* THE FOLLOWING IS THE OUTPUT DATA SET                                        
+         //*                                                                             
+       8 //FT06F001 DD SYSOUT=*                                                          
+!! END OF JES SPOOL FILE !!
+ICH70001I KC03C54  LAST ACCESS AT 20:20:26 ON FRIDAY, JULY 22, 2022
+IEFA111I KC03C54A IS USING THE FOLLOWING JOB RELATED SETTINGS:
+         SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+IEF236I ALLOC. FOR KC03C54A JSTEP01
+IEF237I JES2 ALLOCATED TO CEEOPTS
+IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF237I JES2 ALLOCATED TO SYSIN
+IGD103I SMS ALLOCATED TO DDNAME FT05F001
+IEF237I JES2 ALLOCATED TO FT06F001
+IEF142I KC03C54A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+IEF285I   KC03C54.KC03C54A.JOB05563.D0000101.?         SYSIN         
+IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+IEF285I   KC03C54.KC03C54A.JOB05563.D0000103.?         SYSOUT        
+IEF285I   KC03C54.KC03C54A.JOB05563.D0000102.?         SYSIN         
+IGD104I KC02322.CSCI360.DATASU22                     RETAINED,  DDNAME=FT05F001
+IEF285I   KC03C54.KC03C54A.JOB05563.D0000104.?         SYSOUT        
+IEF373I STEP/JSTEP01 /START 2022203.2020
+IEF032I STEP/JSTEP01 /STOP  2022203.2020 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+        VIRT:   584K  SYS:   252K  EXT:        0K  SYS:    11304K
+        ATB- REAL:                  1056K  SLOTS:                     0K
+             VIRT- ALLOC:      13M SHRD:       0M
+IEF375I  JOB/KC03C54A/START 2022203.2020
+IEF033I  JOB/KC03C54A/STOP  2022203.2020 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+!! END OF JES SPOOL FILE !!
+
+*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                    
+
+                                                                                                               PAGE    1            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                      1 ***************************************************************                             
+                                      2 *                                                             *                             
+                                      3 *  CSCI 360-1             ASSIGNMENT 7              SUMMER 22 *                             
+                                      4 *                                                             *                             
+                                      5 * PROGRAMMER NAME: Ryan Park                                  *                             
+                                      6 *                                                             *                             
+                                      7 * DATE: 7/22/2022                                             *                             
+                                      8 *                                                             *                             
+                                      9 * PROGRAM NAME: Multiplication and Division                   *                             
+                                     10 *                                                             *                             
+                                     11 * FUNCTION:                                                   *                             
+                                     12 *          Take input from a file of employee info            *                             
+                                     13 *            Name/ID/PayRate/HoursWorked/Deduction/Bonus      *                             
+                                     14 *          Use this information to gather their               *                             
+                                     15 *            GrossPay/FederalWithhold/Statewithhold/Netpay    *                             
+                                     16 *          Output that information gathered along with        *                             
+                                     17 *            Totals from all feilds across all employees      *                             
+                                     18 *                                                             *                             
+                                     19 *             NOTE: 17 Employees per page                     *                             
+                                     20 *                   Added formatting for headers              *                             
+                                     21 *                   Added page numbers                        *                             
+                                     22 *                   Changed totals to one line of output      *                             
+                                     23 *                                                             *                             
+                                     24 ***************************************************************                             
+                                     25 *                                                                                           
+000000                               26 ASSIGN6  CSECT                                                                              
+000000                               27          USING ASSIGN6,15     ESTABLISH ADDRESSABILITY ON REG 15                            
+                                     28 *                                                                                           
+000000 41A0 0010            00010    29          LA    10,16          GET FED WITHHOLDING PERCENT INTO R10                          
+000004 41B0 0004            00004    30          LA    11,4           GET STATE WITHHOLDING PERCENT INTO R11                        
+000008 1B66                          31          SR    6,6            ZERO OUT                                                      
+00000A 1B77                          32          SR    7,7            ZERO OUT                                                      
+00000C 5070 F43C            0043C    33          ST    7,TGRO         ZERO OUT TOTAL GROSS PAY IN STORAGE                           
+000010 5070 F440            00440    34          ST    7,TFED         ZERO OUT TOTAL GROSS IN STORAGE                               
+000014 5070 F444            00444    35          ST    7,TST          ZERO OUT TOTAL STATE IN STORAGE                               
+000018 5070 F448            00448    36          ST    7,TNET         ZERO OUT TOTAL NET IN STORAGE                                 
+                                     37 *                                                                                           
+                                     38 *                                                                                           
+00001C 4180 0063            00063    39          LA    8,99           LINE COUNTER REGISTER 99                                      
+000020 1B99                          40          SR    9,9            PAGE COUNTER REGISTER 0                                       
+                                     41 *                                                                                           
+000022 E000 F5E0 0050 005E0          42          XREAD RECORD,80      GET FIRST EMPLOYEE RECORD                                     
+                                     43 *                                                                                           
+000028 4740 F100            00100    44 LOOP1     BC   B'0100',ENDLOOP1  BRANCH TO ENDLOOP1 IF EOF                                  
+                                     45 *                                                                                           
+                                     46 *                                                                                           
+                                     47 *  HERE IS WHERE THE BODY OF YOUR LOOP WILL BE CODED                                        
+                                     48 *                                                                                           
+                                     49 *                                                                                           
+00002C 5A60 F450            00450    50          A     6,ONE          ADD 1 TO EMPLOYEE COUNTER                                     
+000030 D218 F149 F5E0 00149 005E0    51          MVC   OEMPNME(25),RECORD   GRAB ENAME                                              
+000036 D204 F166 F5F9 00166 005F9    52          MVC   OEMPID(5),RECORD+25     GRAB EID                                             
+
+                                                                                                               PAGE    2            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+00003C 5320 F5FF            005FF    53          XDECI 2,RECORD+31    READ PR INTO 2                                                
+000040 5220 F16F            0016F    54          XDECO 2,OPAYRATE     R2 CHANGED FOR OPAYRATE                                       
+000044 5330 1000            00000    55          XDECI 3,0(,1)        GET HOURS INTO 3                                              
+000048 5230 F17F            0017F    56          XDECO 3,OHOURS       PLACE HOURS INTO OUTPUT                                       
+00004C 1C22                          57          MR    2,2            PAY RATE * HOURS                                              
+00004E 5320 1000            00000    58          XDECI 2,0(,1)        GET DEDUCTIONS                                                
+000052 1B32                          59          SR    3,2            SUBTRACT FROM PAY                                             
+000054 5320 1000            00000    60          XDECI 2,0(,1)        GET BONUS                                                     
+000058 1A32                          61          AR    3,2            ADD TO PAY                                                    
+00005A 5230 F18F            0018F    62          XDECO 3,OGROSS       DISPLAY GROSS PAY AMOUNT                                      
+                                     63 *                                                                                           
+                                     64 *        TAKE OUT FROM STORAGE ADD THEN PLACE BACK                                          
+                                     65 *                                                                                           
+00005E 1B77                          66          SR    7,7            CLEAR CONTENTS OF REGISTER 7                                  
+000060 5870 F43C            0043C    67          L     7,TGRO         TOTAL GROSS INTO R 7                                          
+000064 1A73                          68          AR    7,3            ADD TO TOTAL GROSS                                            
+000066 5070 F43C            0043C    69          ST    7,TGRO         STORE R7 BACK INTO TOTAL GROSS                                
+                                     70 *                                                                                           
+                                     71 *                                                                                           
+00006A 1823                          72          LR    2,3            PUT GROSS IN REGISTER 2                                       
+00006C 1842                          73          LR    4,2            PUT GROSS IN REGISTER 4                                       
+                                     74 *                                                                                           
+                                     75 *        Federal = GROSS * REGISTER 10 / 100 AKA REGISTER 5                                 
+                                     76 *                                                                                           
+00006E 1C2A                          77          MR    2,10           MULTIPLY GROSS BY FEDERAL(16)                                 
+000070 1823                          78          LR    2,3            LOAD INTO REGISTER 2                                          
+000072 5C20 F450            00450    79          M     2,ONE          FIX ERROR                                                     
+000076 5D20 F44C            0044C    80          D     2,ONEH         DIVIDE BY 100                                                 
+00007A 5230 F19F            0019F    81          XDECO 3,OFEDWH       PUT FEDWIH TO OUTPUT                                          
+00007E 1853                          82          LR    5,3            PUT FEDERAL INTO REGISTER FIVE                                
+                                     83 *                                                                                           
+                                     84 *        TAKE OUT FROM STORAGE ADD THEN PLACE BACK                                          
+                                     85 *                                                                                           
+000080 1B77                          86          SR    7,7            CLEAR CONTENTS OF REGISTER 7                                  
+000082 5870 F440            00440    87          L     7,TFED         LOAD TOTAL FED INTO R 7                                       
+000086 1A73                          88          AR    7,3            ADD FED TO TOTAL FED                                          
+000088 5070 F440            00440    89          ST    7,TFED         STORE FED+TFED TO TFED                                        
+                                     90 *                                                                                           
+                                     91 *        State = GROSS * REGISTER 11 / 100 AKA REGISTER 5                                   
+                                     92 *                                                                                           
+00008C 1834                          93          LR    3,4            PUT GROSS BACK INTO REGISTER 3                                
+00008E 1C2B                          94          MR    2,11           MULTIPLY GROSS BY STATE(4)                                    
+000090 1823                          95          LR    2,3            LOAD GROSS * 4 INTO REGISTER 2                                
+000092 5C20 F450            00450    96          M     2,ONE          FIX ERROR                                                     
+000096 5D20 F44C            0044C    97          D     2,ONEH         DIVIDE BY 100                                                 
+00009A 5230 F1B0            001B0    98          XDECO 3,OSTWH        PUT STATEWITH TO OUTPUT                                       
+                                     99 *                                                                                           
+                                    100 *        TAKE OUT FROM STORAGE ADD THEN PLACE BACK                                          
+                                    101 *                                                                                           
+00009E 1B77                         102          SR    7,7            CLEAR CONTENTS OF REGISTER 7                                  
+0000A0 5870 F444            00444   103          L     7,TST          LOAD TOTAL FED INTO R 7                                       
+0000A4 1A73                         104          AR    7,3            ADD FED TO TOTAL FED                                          
+0000A6 5070 F444            00444   105          ST    7,TST          STORE ST +TST TO TST                                          
+                                    106 *                                                                                           
+                                    107 *        Net pay = gross pay - FEDWUTG - STATEWITH                                          
+                                    108 *                                                                                           
+0000AA 1824                         109          LR    2,4             PLACE GROSS IN 2                                             
+
+                                                                                                               PAGE    3            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+0000AC 1B23                         110          SR    2,3             SUBTRAcT STATE FROM GROSS                                    
+0000AE 1B25                         111          SR    2,5             SUBTRACT FEDERAL FROM GROSS-STATE                            
+0000B0 5220 F1C1            001C1   112          XDECO 2,ONETPAY                                                                    
+                                    113 *                                                                                           
+                                    114 *        SCARY COMPARE STATEMENTS                                                           
+                                    115 *                                                                                           
+0000B4 5980 F140            00140   116          C     8,=F'17'       COMPARE LINE COUNTER WITH 17                                  
+0000B8 47A0 F0C0            000C0   117          BC    B'1010',PRH    IF LC IS <= 17 BRANCH TO                                      
+0000BC 4740 F0EC            000EC   118          BC    B'0100',DONE   IF LC > OR NOT == PRINT                                       
+                                    119 *                                                                                           
+0000C0                              120 PRH      DS    0H                                                                           
+                                    121 *                                                                                           
+0000C0 1B88                         122          SR    8,8            RESET LINE COUNTER TO 0                                       
+0000C2 5A90 F144            00144   123          A     9,=F'1'        ADD 1 TO PAGE COUNTER                                         
+0000C6 5290 F5DB            005DB   124          XDECO 9,OP1          PUT PAGE COUNTER TO OUTPUT                                    
+0000CA D203 F24E F5E3 0024E 005E3   125          MVC   OP2(4),OP1+8   MVC FOR PAGE: WITH 4 BYTES                                    
+0000D0 E020 F1CD 0085 001CD         126          XPRNT HEADER1,133    PRINT HEADER1                                                 
+0000D6 E020 F2AC 0085 002AC         127          XPRNT COLHDR1,133    PRINT COLHDR1                                                 
+0000DC E020 F331 0085 00331         128          XPRNT COLHDR2,133    PRINT COLHDR2                                                 
+0000E2 E020 F3B6 0085 003B6         129          XPRNT HYPHENS1,133   PRINT HYPENS1                                                 
+0000E8 47F0 F0EC            000EC   130          BC    B'1111',DONE   PRINT DETAIL ACCORDINGLY                                      
+                                    131 *                                                                                           
+0000EC                              132 DONE     DS    0H             GO AHEAD AND PRINT IT                                         
+                                    133 *                                                                                           
+0000EC E020 F148 0085 00148         134          XPRNT DETAIL,133     PRINT THE EMPLOYEE DETAIL RECORD                              
+0000F2 5A80 F144            00144   135          A     8,=F'1'        ADD 1 TO LINE COUNTER                                         
+                                    136 *                                                                                           
+0000F6 E000 F5E0 0050 005E0         137          XREAD RECORD,80      READ NEXT EMPLOYEE RECORD                                     
+                                    138 *                                                                                           
+0000FC 47F0 F028            00028   139          BC    B'1111',LOOP1  BRANCH TO TOP OF LOOP1 TO CHECK EOF                           
+                                    140 *                                                                                           
+000100                              141 ENDLOOP1 DS    0H                                                                           
+                                    142 *                                                                                           
+000100 5260 F576            00576   143          XDECO 6,TE           PUT COUNT TO OUTPUT                                           
+000104 5870 F43C            0043C   144          L     7,TGRO         LOAD TOTAL GROSS TO REGISTER 7                                
+000108 5270 F5A6            005A6   145          XDECO 7,TG           PUT TG OUTPUT                                                 
+00010C 5870 F440            00440   146          L     7,TFED         LOAD TOTAL FED TO REGISTER 7                                  
+000110 5270 F5B6            005B6   147          XDECO 7,TF           PUT TF TO OUTPUT                                              
+000114 5870 F444            00444   148          L     7,TST          LOAD TOTAL STATE TO REGISTER 7                                
+000118 5270 F5C7            005C7   149          XDECO 7,TS           PUT TS TO OUTPUT                                              
+                                    150 *                                                                                           
+                                    151 *        NET PAY USING REGISTER 7                                                           
+                                    152 *                                                                                           
+00011C 1B77                         153          SR    7,7            CLEAR CONTENTS OF REGISTER 7                                  
+00011E 5870 F43C            0043C   154          L     7,TGRO         LOAD TOTAL GROSS TO R 7                                       
+000122 5B70 F440            00440   155          S     7,TFED         SUBTRACT FEDERAL FROM GROSS                                   
+000126 5B70 F444            00444   156          S     7,TST          SUBTRACT STATE FROM GROSS                                     
+                                    157 *                                                                                           
+                                    158 *        REGISTER 7 NOW HOLDS TOTAL NET PAY                                                 
+                                    159 *                                                                                           
+00012A 5270 F5D8            005D8   160          XDECO 7,TN           PUT TNETP TO OUTPUT                                           
+00012E E020 F4DA 0085 004DA         161          XPRNT HYPHENS2,133   PRINT HYPENS2                                                 
+000134 E020 F55F 0085 0055F         162          XPRNT TOTALS1,133    PRINT TOTALS1                                                 
+                                    163 *                                                                                           
+00013A 07FE                         164          BCR   B'1111',14     UNCONDITIONAL RETURN TO CALLER                                
+                                    165 *                                                                                           
+                                    166          LTORG                LITERAL ORGANIZATION                                          
+
+                                                                                                               PAGE    4            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+000140 00000011                     167                =F'17'                                                                       
+000144 00000001                     168                =F'1'                                                                        
+                                    169 *                                                                                           
+                                    170 * THE FOLLOWING 16 LINES ARE THE DEFINITION FOR THE OUTPUT DETAIL                           
+                                    171 *   LINE FOR EACH EMPLOYEE FOR THE REPORT YOU ARE CREATING.  IT                             
+                                    172 *   IS EXACTLY 133 BYTES LONG.  EACH OUTPUT FIELD IS SEPARATED                              
+                                    173 *   BY 4 OR 5 BYTES OF EBCDIC SPACES, i.e., X'40'.                                          
+                                    174 *                                                                                           
+000148 F0                           175 DETAIL   DC    C'0'   CARRIAGE CONTROL CHARACTER                                            
+000149                              176 OEMPNME  DS    CL25   OUTPUT FIELD FOR EMPLOYEE NAME                                        
+000162 40404040                     177          DC    4C' '  SPACES                                                                
+000166                              178 OEMPID   DS    CL5    OUTPUT FIELD FOR EMPLOYEE ID                                          
+00016B 40404040                     179          DC    4C' '  SPACES                                                                
+00016F                              180 OPAYRATE DS    CL12   OUTPUT FIELD FOR XDECO OF EMPLOYEE PAY RATE                           
+00017B 40404040                     181          DC    4C' '  SPACES                                                                
+00017F                              182 OHOURS   DS    CL12   OUTPUT FIELD FOR XDECO OF EMPLOYEE HOURS WORKED                       
+00018B 40404040                     183          DC    4C' '  SPACES                                                                
+00018F                              184 OGROSS   DS    CL12   OUTPUT FIELD FOR XDECO OF EMPLOYEE GROSS PAY AMT                      
+00019B 40404040                     185          DC    4C' '  SPACES                                                                
+00019F                              186 OFEDWH   DS    CL12   OUTPUT FIELD FOR XDECO OF FEDERAL WITHHOLDING AMT                     
+0001AB 4040404040                   187          DC    5C' '  SPACES                                                                
+0001B0                              188 OSTWH    DS    CL12   OUTPUT FIELD FOR XDECO OF STATE WITHHOLDING AMT                       
+0001BC 4040404040                   189          DC    5C' '  SPACES                                                                
+0001C1                              190 ONETPAY  DS    CL12   OUTPUT FIELD FOR XDECO OF EMPLOYEE NET PAY AMT                        
+                                    191 *                                                                                           
+                                    192 *                                                                                           
+                                    193 *  HEADER 1                                                                                 
+                                    194 *                                                                                           
+                                    195 *                                                                                           
+0001CD 40                           196 HEADER1  DC    C' '   CARRIAGE CONTROL                                                      
+0001CE 4040404040404040             197          DC    53C' ' 53 SPACES                                                             
+000203 E2C5D4C960D4D6D5             198          DC    C'SEMI-MONTHLY PAYROLL REPORT'                                               
+00021E 4040404040404040             199          DC    43C' ' 35 SPACES                                                             
+000249 D7C1C7C57A                   200          DC    C'PAGE:'                                                                     
+00024E                              201 OP2      DS    CL4     USED TO MVC OP1(PAGE COUNTER)                                        
+000252 4040404040404040             202          DC    90C' '  10 SPACES                                                            
+                                    203 *                                                                                           
+                                    204 *  COLHDR1                                                                                  
+                                    205 *                                                                                           
+0002AC 40                           206 COLHDR1  DC    C' '   CARRIAGE CONTROL                                                      
+0002AD 4040404040404040             207          DC    91C' ' 91 SPACES                                                             
+000308 C6C5C4C5D9C1D3               208          DC    C'FEDERAL'                                                                   
+00030F 4040404040404040             209          DC    12C' ' 12 SPACES                                                             
+00031B E2E3C1E3C5                   210          DC    C'STATE'                                                                     
+000320 4040404040404040             211          DC    11C' ' 11 SPACES                                                             
+00032B C4C9D9C5C3E3                 212          DC    C'DIRECT'                                                                    
+                                    213 *                                                                                           
+                                    214 * COLHDR2                                                                                   
+                                    215 *                                                                                           
+000331 40                           216 COLHDR2  DC    C' '  CARRIAGE CONTROL                                                       
+000332 C5D4D7D3D6E8C5C5             217          DC    C'EMPLOYEE NAME'                                                             
+00033F 4040404040404040             218          DC    19C' ' 19 SPACES                                                             
+000352 C9C4                         219          DC    C'ID'                                                                        
+000354 404040404040                 220          DC    6C' '  6 SPACES                                                              
+00035A C8D6E4D9D3E840D7             221          DC    C'HOURLY PAY'                                                                
+000364 40404040                     222          DC    4C' '  4 SPACES                                                              
+000368 C8D6E4D9E240E6D6             223          DC    C'HOURS WORKED'                                                              
+
+                                                                                                               PAGE    5            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+000374 40404040404040               224          DC    7C' '  7 SPACES                                                              
+00037B C7D9D6E2E240D7C1             225          DC    C'GROSS PAY'                                                                 
+000384 4040404040                   226          DC    5C' '  5 SPACES                                                              
+000389 E6C9E3C8C8D6D3C4             227          DC    C'WITHHOLDING'                                                               
+000394 404040404040                 228          DC    6C' '  6 SPACES                                                              
+00039A E6C9E3C8C8D6D3C4             229          DC    C'WITHHOLDING'                                                               
+0003A5 404040404040                 230          DC    6C' '  6 SPACES                                                              
+0003AB C4C5D7D6E2C9E340             231          DC    C'DEPOSIT AMT'                                                               
+                                    232 *                                                                                           
+                                    233 *  HYPHENS1                                                                                 
+                                    234 *                                                                                           
+0003B6 40                           235 HYPHENS1 DC   C' '  CARRIAGE CONTROL                                                        
+0003B7 6060606060606060             236          DC   C'-------------------------'                                                  
+0003D0 40404040                     237          DC   4C' '  4 SPACES                                                               
+0003D4 6060606060                   238          DC   C'-----'                                                                      
+0003D9 40404040                     239          DC   4C' '  4 SPACES                                                               
+0003DD 6060606060606060             240          DC   C'------------'                                                               
+0003E9 40404040                     241          DC   4C' '  4 SPACES                                                               
+0003ED 6060606060606060             242          DC   C'------------'                                                               
+0003F9 40404040                     243          DC   4C' '  4 SPACES                                                               
+0003FD 6060606060606060             244          DC   C'------------'                                                               
+000409 40404040                     245          DC   4C' '  4 SPACES                                                               
+00040D 6060606060606060             246          DC   C'------------'                                                               
+000419 4040404040                   247          DC   5C' '  5 SPACES                                                               
+00041E 6060606060606060             248          DC   C'------------'                                                               
+00042A 4040404040                   249          DC   5C' '  5 SPACES                                                               
+00042F 6060606060606060             250          DC   C'------------'                                                               
+                                    251 *                                                                                           
+                                    252 *                                                                                           
+                                    253 *   STORAGE FOR TOTALS - TNET IS NOT USED YET?                                              
+                                    254 *                                                                                           
+00043C                              255 TGRO     DS    F      TOTAL FED TO HOLD IN STORAGE                                          
+000440                              256 TFED     DS    F      TOTAL FED TO HOLD IN STORAGE                                          
+000444                              257 TST      DS    F      TOTAL STATE TO HOLD IN STORAGE                                        
+000448                              258 TNET     DS    F      TOTAL NET TO HOLD                                                     
+                                    259 *                                                                                           
+                                    260 *      CONSTANTS                                                                            
+                                    261 *                                                                                           
+00044C 00000064                     262 ONEH     DC    F'100' CONSTANT FOR CALCULATIONS                                             
+000450 00000001                     263 ONE      DC    F'1'   CONSTANT FOR COUNTERS                                                 
+000454 F0                           264 NEWL     DC    C'0' NEW LINE                                                                
+000455 4040404040404040             265          DC    133C' '                                                                      
+                                    266 *                                                                                           
+                                    267 *     HYPHENS2                                                                              
+                                    268 *                                                                                           
+0004DA F0                           269 HYPHENS2 DC    C'0'  CARRIAGE CONTROL                                                       
+0004DB 4040404040404040             270          DC    70C' '  70 SPACES                                                            
+000521 6060606060606060             271          DC    C'------------'                                                              
+00052D 40404040                     272          DC    4C' '   4 SPACES                                                             
+000531 6060606060606060             273          DC    C'------------'                                                              
+00053D 4040404040                   274          DC    5C' '   5 SPACES                                                             
+000542 6060606060606060             275          DC    C'------------'                                                              
+00054E 4040404040                   276          DC    5C' '   5 SPACES                                                             
+000553 6060606060606060             277          DC    C'------------'                                                              
+                                    278 *                                                                                           
+                                    279 *     NEW SINGLE LINE ACCUMULATOR OUTPUT                                                    
+                                    280 *                                                                                           
+
+                                                                                                               PAGE    6            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+00055F F0                           281 TOTALS1  DC    C'0'    CARRIAGE CONTROL CHARACTER                                           
+000560 D5E4D4C2C5D940D6             282          DC    C'NUMBER OF EMPLOYEES:'                                                      
+000574 4040                         283          DC    2C' '    2 SPACES                                                            
+000576                              284 TE       DS    CL12     TOTAL EMPLOYEE COUNTER                                              
+000582 4040404040404040             285          DC    25C' '  25 SPACES                                                            
+00059B E3D6E3C1D3E27A               286          DC    C'TOTALS:'                                                                   
+0005A2 40404040                     287          DC    4C' '   4 SPACES                                                             
+0005A6                              288 TG       DS    CL3     TOTAL GROSS PAY                                                      
+0005A9 4040404040404040             289          DC    13C' '  10 SPACES                                                            
+0005B6                              290 TF       DS    CL3     TOTAL FED WITHHOLDING                                                
+0005B9 4040404040404040             291          DC    14C' '  11 SPACES                                                            
+0005C7                              292 TS       DS    CL3     TOTAL STATE WITHDRAW                                                 
+0005CA 4040404040404040             293          DC    14C' '  12 SPACES                                                            
+0005D8                              294 TN       DS    CL3     TOTAL NET PAY                                                        
+                                    295 *                                                                                           
+                                    296 *                                                                                           
+0005DB                              297 OP1      DS    CL5' '     PAGE COUNTER                                                      
+                                    298 *  THE FOLLOWING IS THE BUFFER FOR THE INPUT RECORD                                         
+                                    299 *                                                                                           
+0005E0                              300 RECORD   DS    CL80   BUFFER FOR EMPLOYEE RECORD READ FROM INPUT FILE                       
+                                    301 *                                                                                           
+                                    302          END   ASSIGN6                                                                      
+
+***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+*** DYNAMIC CORE AREA USED:  LOW:   13976 HIGH:    1004 LEAVING:  478588 FREE BYTES. AVERAGE:       49 BYTES/STMT ***               
+
+*** ASSEMBLY TIME =    0.000 SECS,   303000 STATEMENTS/SEC ***                                                                      
+
+*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+                                                     SEMI-MONTHLY PAYROLL REPORT                                           PAGE:   1
+                                                                                           FEDERAL            STATE           DIRECT
+EMPLOYEE NAME                   ID      HOURLY PAY    HOURS WORKED       GROSS PAY     WITHHOLDING      WITHHOLDING      DEPOSIT AMT
+-------------------------    -----    ------------    ------------    ------------    ------------     ------------     ------------
+
+WOLFGANG AMADEUS MOZART      12345              15              80            1675             268               67             1340
+
+RICHARD STRAUSS              23456              19              80            1530             244               61             1225
+
+AMY BEACH                    22132              10              80             969             155               38              776
+
+DAME ETHEL SMYTHE            65465              22              80            2645             423              105             2117
+
+PETER ILYICH TCHAIKOVSKY     44560              23              28             680             108               27              545
+
+ANTON BRUCKNER               99870              22              80            1739             278               69             1392
+
+LUDWIG VAN BEETHOVEN         13345              15              80            1675             268               67             1340
+
+JOHANNES BRAHMS              24456              19              80            1530             244               61             1225
+
+BELA BARTOK                  22532              10              80             969             155               38              776
+
+MAX REGER                    11465              22              80            2645             423              105             2117
+
+SAMUEL BARBER                13360              23              28             680             108               27              545
+
+GIUSEPPE VERDI               99873              22              80            1739             278               69             1392
+
+JOHANN SEBASTIAN BACH        12342              15              80            1675             268               67             1340
+
+JOSEPH HAYDN                 23452              19              80            1530             244               61             1225
+
+GEORG FRIEDRICH HANDEL       22131              10              80             969             155               38              776
+
+EDWARD ELGAR                 65411              22              80            2645             423              105             2117
+
+NIKOLAI RIMSKY-KORSAKOV      44378              23              28             680             108               27              545
+                                                     SEMI-MONTHLY PAYROLL REPORT                                           PAGE:   2
+                                                                                           FEDERAL            STATE           DIRECT
+EMPLOYEE NAME                   ID      HOURLY PAY    HOURS WORKED       GROSS PAY     WITHHOLDING      WITHHOLDING      DEPOSIT AMT
+-------------------------    -----    ------------    ------------    ------------    ------------     ------------     ------------
+
+CLAUDE DEBUSSY               99855              22              80            1739             278               69             1392
+
+ANTONIN DVORAK               13346              15              80            1675             268               67             1340
+
+THOMAS TALLIS                24457              19              80            1530             244               61             1225
+
+RALPH VAUGHAN WILLIAMS       22538              10              80             969             155               38              776
+
+RICHARD WAGNER               11477              22              80            2645             423              105             2117
+
+FREDERIC CHOPIN              17777              23              28             680             108               27              545
+
+JOAN TOWER                   99211              22              80            1739             278               69             1392
+
+                                                                      ------------    ------------     ------------     ------------
+
+NUMBER OF EMPLOYEES:            24                         TOTALS:           36952            5904             1468            29580
+
+*** EXECUTION TIME =    0.001 SECS.      1267 INSTRUCTIONS EXECUTED -  1267000 INSTRUCTIONS/SEC ***                                 
+
+*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+!! END OF JES SPOOL FILE !!
